@@ -1,0 +1,3 @@
+packages: .
+
+allow-newer: binary-parsers:*, wire-streams:*, word24:*, tcp-streams:*, mysql-haskell:*

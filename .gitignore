@@ -1,0 +1,14 @@
+# Haskell / cabal build artifacts
+dist-newstyle/
+dist/
+*.o
+*.hi
+*.hie
+.ghc.environment.*
+cabal.project.local
+
+# IDE
+.idea/
+
+# macOS
+.DS_Store
