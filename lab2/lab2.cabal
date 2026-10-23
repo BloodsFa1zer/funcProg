@@ -1,0 +1,23 @@
+cabal-version:      2.4
+name:               lab2
+version:            0.1.0.0
+synopsis:           Multithreaded Huffman archiver (Haskell, GHC -threaded)
+build-type:         Simple
+
+executable lab2
+    main-is:          Main.hs
+    hs-source-dirs:   app, src
+    other-modules:    Huffman
+                    , Archive
+                    , Pool
+    build-depends:    base >=4 && <5
+                    , bytestring
+                    , binary
+                    , array
+                    , directory
+                    , filepath
+    default-language: Haskell2010
+    -- -A128m: Huffman encoding allocates heavily (bit packing through
+    -- Builder), so a larger allocation area keeps parallel GC from
+    -- becoming the bottleneck at high thread counts
+    ghc-options:      -Wall -O2 -threaded -rtsopts "-with-rtsopts=-N -A128m"
